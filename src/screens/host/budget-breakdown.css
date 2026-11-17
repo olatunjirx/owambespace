@@ -1,0 +1,144 @@
+/* Categorical slots, validated as a ring (slot 6 sits beside slot 1) on the
+   white card surface. Three fall under 3:1 contrast, which is why every slice
+   is also named in the legend beside it. Defined at the root so the assistant
+   and the expense list can use the same colour per category. */
+:root {
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+  --donut-track: #f1f1f1;
+}
+
+.breakdown__body {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.breakdown__side {
+  min-width: 0;
+}
+
+.breakdown__dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+/* ── Donut ────────────────────────────────────────────────── */
+
+.donut {
+  position: relative;
+  width: 208px;
+  height: 208px;
+  flex: none;
+}
+
+.donut svg {
+  display: block;
+  overflow: visible;
+}
+
+.donut__centre {
+  position: absolute;
+  inset: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.donut__label,
+.donut__sub {
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.donut__figure {
+  font-size: var(--scale-24);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text-strong);
+}
+
+.donut__figure--over {
+  color: var(--danger);
+}
+
+/* ── Legend ───────────────────────────────────────────────── */
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legend__row {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto 40px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--stroke-soft);
+  transition: opacity 0.18s ease;
+}
+
+.legend__row:last-child {
+  border-bottom: none;
+}
+
+.legend__row--dim {
+  opacity: 0.4;
+}
+
+.legend__name {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+  font-size: var(--scale-14);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.legend__count {
+  font-size: var(--scale-12);
+  font-weight: 400;
+  color: var(--text-soft);
+}
+
+.legend__amount {
+  font-size: var(--scale-14);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-strong);
+}
+
+.legend__share {
+  font-size: var(--scale-12);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-sub);
+  text-align: right;
+}
+
+@media (max-width: 860px) {
+  .breakdown__body {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 20px;
+  }
+
+  .breakdown__side {
+    width: 100%;
+  }
+}

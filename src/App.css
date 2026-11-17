@@ -1,0 +1,29 @@
+.page {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg-default);
+}
+
+/* The design is drawn at 1440×1024 with two 992px-tall panels. Below that the
+   split still works; the panels just take the height they are given. */
+.page > * {
+  min-height: calc(100vh - 32px);
+  min-height: calc(100dvh - 32px);
+}
+
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .page > * {
+    min-height: 0;
+  }
+
+  .page > .panel {
+    flex: 1 1 auto;
+  }
+}

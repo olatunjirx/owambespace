@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+*.tsbuildinfo
+
+# Local-only tooling, not part of the app
+.claude
+__preview.html
+__vendor
+serve.py

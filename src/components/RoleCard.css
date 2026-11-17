@@ -1,0 +1,61 @@
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--primary-lighter);
+  overflow: hidden;
+}
+
+.role-card__badge {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0.525px solid var(--primary-lighter);
+  border-radius: var(--radius-full);
+  background: var(--primary-base);
+}
+
+.role-card__badge img {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.role-card__info {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Holds the outgoing and incoming labels on top of each other during the
+   swap, so the "Change" button never shifts sideways. */
+.role-card__text {
+  position: relative;
+  display: block;
+  min-width: 0;
+  height: var(--scale-20);
+  flex: 1 1 0;
+}
+
+.role-card__value {
+  position: absolute;
+  inset: 0;
+  display: block;
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--primary-darker);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

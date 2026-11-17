@@ -1,0 +1,213 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.field__label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--text-strong);
+  cursor: pointer;
+}
+
+.field__control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+}
+
+.field__control--affix {
+  padding: 0 10px;
+  min-height: 44px;
+}
+
+.field__input {
+  flex: 1 1 0;
+  min-width: 0;
+  /* 16px, not the design's 14px: anything smaller makes iOS Safari zoom the
+     page on focus, which throws the user out of the form layout. */
+  font-size: var(--scale-16);
+  font-weight: 400;
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--text-strong);
+}
+
+.field__input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.field__divider {
+  flex: none;
+  width: 1px;
+  height: 40px;
+  background: var(--stroke-soft);
+}
+
+.field__suffix {
+  flex: none;
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.field__toggle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -10px -10px -10px 0;
+  color: var(--icon-soft);
+  border-radius: 4px;
+}
+
+.field__error {
+  overflow: hidden;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--danger);
+}
+
+.field__error-text {
+  display: block;
+  padding-top: 2px;
+}
+
+/* ── Password strength meter ─────────────────────────────── */
+
+.strength {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.strength__bars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.strength__segment {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  overflow: hidden;
+}
+
+.strength__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform-origin: left center;
+}
+
+.strength__label {
+  font-size: var(--scale-12);
+  font-weight: 500;
+  line-height: var(--scale-16);
+  text-align: right;
+}
+
+/* ── Hint line ───────────────────────────────────────────── */
+
+.field__hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.field__hint-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  color: var(--icon-soft);
+}
+
+/* ── Identifier badge + domain-typo suggestion ───────────── */
+
+.field__badge {
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary-lighter);
+  font-size: var(--scale-10);
+  font-weight: 600;
+  line-height: var(--scale-16);
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: var(--primary-base);
+}
+
+.field__suggestion {
+  overflow: hidden;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.field__suggestion-text {
+  display: block;
+  padding-top: 2px;
+}
+
+.field__suggestion-button {
+  display: inline;
+  padding: 0;
+  color: var(--primary-base);
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.field__suggestion-dismiss {
+  display: inline;
+  padding: 0;
+  color: var(--text-soft);
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+/* ── Caps lock warning ───────────────────────────────────── */
+
+.field__caps {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--strength-fair);
+}
+
+.field__optional {
+  margin-left: auto;
+  font-size: var(--scale-12);
+  font-weight: 400;
+  line-height: var(--scale-16);
+  color: var(--text-soft);
+}

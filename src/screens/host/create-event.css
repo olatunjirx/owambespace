@@ -1,0 +1,88 @@
+.create__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* The preview folds under the form inside the drawer's single column. */
+.create__preview {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--stroke-soft);
+}
+
+.create__preview-title {
+  font-size: var(--scale-14);
+  font-weight: 600;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+}
+
+.create__preview-hint {
+  margin-top: 4px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.create__checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.create__checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--stroke-soft);
+}
+
+.create__checklist-item:last-child {
+  border-bottom: none;
+}
+
+.create__checklist-when {
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 30px;
+  padding: 2px 0;
+  border-radius: var(--radius-full);
+  background: var(--primary-lighter);
+  font-size: var(--scale-10);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--primary-base);
+}
+
+.create__checklist-label {
+  display: block;
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+}
+
+.create__checklist-note {
+  display: block;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+@media (max-width: 620px) {
+  .create__row {
+    grid-template-columns: 1fr;
+  }
+}

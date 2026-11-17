@@ -1,0 +1,113 @@
+.overview__date-input {
+  width: 168px;
+}
+
+.overview__of {
+  font-size: var(--scale-18);
+  color: var(--text-soft);
+}
+
+/* Some tiles carry a word rather than a number; the display face is too large
+   for a phrase like "Awaiting reply". */
+.overview__value--text {
+  font-family: var(--font-sans);
+  font-size: var(--scale-20);
+  font-weight: 600;
+  line-height: var(--scale-32);
+}
+
+.overview__warning {
+  padding: 12px 14px;
+  border: 1px solid rgba(229, 72, 77, 0.2);
+  border-radius: var(--radius-12);
+  background: rgba(229, 72, 77, 0.06);
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  color: var(--danger);
+}
+
+.overview__next {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.overview__next li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-12);
+  background: var(--primary-lighter);
+}
+
+.overview__next-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.overview__next-label {
+  font-size: var(--scale-14);
+  font-weight: 600;
+  line-height: var(--scale-20);
+  color: var(--primary-darker);
+}
+
+.overview__next-note {
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.overview__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.overview__list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--stroke-soft);
+}
+
+.overview__list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.overview__row-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.overview__row-title {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+  overflow-wrap: anywhere;
+}
+
+.overview__row-meta {
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.overview__blank {
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  color: var(--text-sub);
+}

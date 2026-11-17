@@ -1,0 +1,137 @@
+/* ── Primary action ──────────────────────────────────────── */
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 12px;
+  border-radius: var(--radius-12);
+  background: var(--primary-base);
+  color: var(--text-inverse);
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  overflow: hidden;
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.button__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 4px;
+  white-space: nowrap;
+}
+
+.button__spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(255, 255, 255, 0.32);
+  border-top-color: var(--text-inverse);
+}
+
+/* ── Text button (Back, Change) ──────────────────────────── */
+
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--radius-12);
+  font-size: var(--scale-12);
+  font-weight: 500;
+  line-height: var(--scale-16);
+  color: var(--text-soft);
+}
+
+.text-button--accent {
+  color: var(--primary-base);
+}
+
+.text-button__icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Google / OAuth button ───────────────────────────────── */
+
+.oauth-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--text-strong);
+}
+
+.oauth-button__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.divider__line {
+  flex: 1 0 0;
+  min-width: 1px;
+  height: 1px;
+  background: var(--stroke-soft);
+  transform-origin: center;
+}
+
+.divider__label {
+  flex: none;
+  font-size: var(--scale-10);
+  font-weight: 500;
+  line-height: var(--scale-12);
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+/* The primary action is the main target on every screen. */
+.button {
+  min-height: 44px;
+}
+
+.oauth-button {
+  min-height: 44px;
+}
+
+.text-button {
+  /* Padding rather than a fixed box, so the label keeps its position while
+     the hit area grows to something a thumb can find. */
+  min-height: 44px;
+  padding: 0 8px;
+  margin-left: -8px;
+}

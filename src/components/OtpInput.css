@@ -1,0 +1,63 @@
+.otp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.otp__boxes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.otp__box {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 56px;
+  padding: 0;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-subtle);
+  text-align: center;
+  /* Tabular figures keep the six boxes optically identical. */
+  font-variant-numeric: tabular-nums;
+  font-size: var(--scale-20);
+  font-weight: 500;
+  line-height: var(--scale-24);
+  color: var(--text-strong);
+  caret-color: var(--primary-base);
+}
+
+.otp__box:focus {
+  background: var(--bg-default);
+  outline: none;
+}
+
+.otp__error {
+  text-align: left;
+}
+
+.otp__resend {
+  font-size: var(--scale-12);
+  font-weight: 500;
+  line-height: var(--scale-16);
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.otp__countdown {
+  color: var(--text-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+.otp__resend-button {
+  display: inline;
+  padding: 0;
+  color: var(--primary-base);
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-position: from-font;
+}

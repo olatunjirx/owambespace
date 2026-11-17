@@ -1,0 +1,464 @@
+.budget-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.budget-edit__input {
+  width: 160px;
+  font-variant-numeric: tabular-nums;
+}
+
+.budget-alert {
+  padding: 12px 14px;
+  border: 1px solid rgba(229, 72, 77, 0.2);
+  border-radius: var(--radius-12);
+  background: rgba(229, 72, 77, 0.06);
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  color: var(--danger);
+}
+
+/* ── Add row ──────────────────────────────────────────────── */
+
+.budget-add {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.budget-add__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+
+.budget-add__field--grow {
+  flex: 1 1 200px;
+}
+
+.budget-add__submit {
+  flex: none;
+  width: 110px;
+}
+
+.budget-empty {
+  margin-top: 16px;
+  font-size: var(--scale-14);
+  color: var(--text-sub);
+}
+
+.budget-empty button,
+.assist__nudge button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 500;
+  color: var(--primary-base);
+  cursor: pointer;
+}
+
+/* ── Expense rows ─────────────────────────────────────────── */
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expense {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--stroke-soft);
+}
+
+.expense__text {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.expense__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+  overflow-wrap: anywhere;
+}
+
+.expense__category {
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+/* An amount that reads as text until it is touched. */
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+  width: 140px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.amount:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.amount:focus-within {
+  border-color: var(--primary-base);
+  box-shadow: var(--ring-focus);
+}
+
+.amount__currency {
+  font-size: var(--scale-14);
+  color: var(--text-soft);
+}
+
+.amount input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  /* 16px keeps iOS from zooming when the field takes focus. */
+  font-size: var(--scale-16);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-strong);
+  text-align: right;
+  outline: none;
+}
+
+.amount input:disabled {
+  color: var(--text-soft);
+}
+
+/* ── Assistant ────────────────────────────────────────────── */
+
+.assist-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius: var(--radius-12);
+  background: var(--primary-lighter);
+  font: inherit;
+  font-size: var(--scale-14);
+  color: var(--primary-base);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.assist-launch:hover {
+  background: #ebe2ff;
+}
+
+.assist {
+  position: relative;
+  border-color: rgba(105, 53, 240, 0.18);
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(105, 53, 240, 0.07), transparent 60%),
+    var(--bg-default);
+}
+
+.assist__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.assist__mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8a5cff, var(--primary-base) 55%, var(--primary-darker));
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(105, 53, 240, 0.3);
+}
+
+.assist__intro {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.assist__title {
+  font-size: var(--scale-16);
+  font-weight: 600;
+  line-height: var(--scale-24);
+  color: var(--text-strong);
+}
+
+.assist__close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: none;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.assist__close:hover {
+  background: var(--bg-subtle);
+  color: var(--text-strong);
+}
+
+.assist__inputs {
+  display: grid;
+  grid-template-columns: auto 120px minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.assist__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.assist__field--wide {
+  grid-column: 1 / -1;
+}
+
+.assist__fixed {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-12);
+  background: var(--primary-lighter);
+  font-size: var(--scale-14);
+  font-weight: 500;
+  color: var(--primary-darker);
+  white-space: nowrap;
+}
+
+.assist__styles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.assist__style {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.assist__style:hover {
+  border-color: rgba(105, 53, 240, 0.3);
+}
+
+.assist__style--on {
+  border-color: var(--primary-base);
+  background: var(--primary-lighter);
+}
+
+.assist__style-label {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.assist__style-hint {
+  font-size: var(--scale-12);
+  color: var(--text-sub);
+}
+
+.assist__nudge {
+  margin-top: 12px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.assist__go {
+  margin-top: 20px;
+  max-width: 240px;
+}
+
+.assist__draft {
+  margin-top: 20px;
+}
+
+.assist__why {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: var(--radius-12);
+  background: var(--primary-lighter);
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  color: var(--primary-darker);
+}
+
+.assist__warning {
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(245, 165, 36, 0.16);
+  color: #8a5600;
+}
+
+.assist__lines {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assist__line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--stroke-soft);
+  transition: opacity 0.15s ease;
+}
+
+.assist__line--off {
+  opacity: 0.5;
+}
+
+.assist__pick {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.assist__pick input {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-base);
+}
+
+.assist__line-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.assist__line-label {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+}
+
+.assist__line-note {
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.assist__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--stroke-soft);
+}
+
+.assist__tally {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--scale-14);
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.assist__fits {
+  font-size: var(--scale-12);
+  color: var(--text-sub);
+}
+
+.assist__over {
+  font-size: var(--scale-12);
+  color: var(--danger);
+}
+
+.assist__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.assist__actions .button {
+  width: auto;
+  min-width: 200px;
+}
+
+@media (max-width: 760px) {
+  .budget-add__submit {
+    width: 100%;
+  }
+
+  .assist__inputs {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .assist__inputs .assist__field:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .assist__styles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .amount {
+    width: 120px;
+  }
+
+  .assist__actions,
+  .assist__actions .button {
+    width: 100%;
+  }
+}

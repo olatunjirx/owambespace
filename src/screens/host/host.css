@@ -1,0 +1,335 @@
+/*
+ * Furniture shared by every logged-in screen — cards, stat tiles, tags,
+ * secondary buttons and the compact form controls used by filter bars and
+ * inline add-rows. Screen-specific rules live beside their screen.
+ */
+
+.section-title {
+  margin-bottom: 12px;
+  font-size: var(--scale-14);
+  font-weight: 600;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-24);
+  background: var(--bg-default);
+}
+
+.card--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card__title {
+  font-size: var(--scale-14);
+  font-weight: 600;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+}
+
+.card__hint {
+  margin-top: 4px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* ── Stat tiles ──────────────────────────────────────────── */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stat {
+  display: block;
+  padding: 18px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-24);
+  background: var(--bg-default);
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+a.stat:hover {
+  border-color: rgba(105, 53, 240, 0.22);
+  background: var(--primary-lighter);
+}
+
+.stat__label {
+  display: block;
+  font-size: var(--scale-12);
+  font-weight: 500;
+  line-height: var(--scale-16);
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.stat__value {
+  /* Spans by default, so they need block to stack under the label. */
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: var(--scale-32);
+  line-height: var(--scale-32);
+  /* Digits must not reflow as counts change. */
+  font-variant-numeric: tabular-nums;
+  color: var(--text-strong);
+}
+
+.stat__meta {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.meter {
+  height: 6px;
+  margin-top: 14px;
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  overflow: hidden;
+}
+
+.meter__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--primary-base);
+  transform-origin: left center;
+}
+
+/* ── Tags ────────────────────────────────────────────────── */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  font-size: var(--scale-10);
+  font-weight: 600;
+  line-height: var(--scale-16);
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+.tag--accent {
+  background: var(--primary-lighter);
+  color: var(--primary-base);
+}
+
+.tag--good {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--strength-strong);
+}
+
+.tag--warn {
+  background: rgba(245, 165, 36, 0.14);
+  color: #a96a00;
+}
+
+.tag--danger {
+  background: rgba(229, 72, 77, 0.1);
+  color: var(--danger);
+}
+
+.tag--muted {
+  background: var(--bg-subtle);
+  color: var(--text-soft);
+}
+
+/* ── Empty states ────────────────────────────────────────── */
+
+.empty {
+  padding: 40px 20px;
+  border: 1px dashed var(--bg-muted);
+  border-radius: var(--radius-24);
+  text-align: center;
+}
+
+.empty__title {
+  font-size: var(--scale-16);
+  font-weight: 600;
+  line-height: var(--scale-24);
+  color: var(--text-strong);
+}
+
+.empty__body {
+  margin: 6px auto 0;
+  max-width: 46ch;
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  color: var(--text-sub);
+}
+
+.empty__action {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+/* ── Secondary button ────────────────────────────────────── */
+
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--text-strong);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.ghost-button:hover {
+  background: var(--primary-lighter);
+  border-color: rgba(105, 53, 240, 0.22);
+  color: var(--primary-base);
+}
+
+.ghost-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ghost-button--danger:hover {
+  background: rgba(229, 72, 77, 0.08);
+  border-color: rgba(229, 72, 77, 0.24);
+  color: var(--danger);
+}
+
+.ghost-button--small {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: var(--scale-12);
+}
+
+/* ── Compact form controls ───────────────────────────────── */
+
+.filters__label {
+  display: block;
+  font-size: var(--scale-10);
+  font-weight: 600;
+  line-height: var(--scale-12);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.filters__input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+  /* 16px so iOS Safari does not zoom the page when a control is focused. */
+  font-size: var(--scale-16);
+  font-family: inherit;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.filters__input:focus {
+  outline: none;
+  border-color: var(--primary-base);
+  box-shadow: var(--ring-focus);
+}
+
+/* ── Shared row bits ─────────────────────────────────────── */
+
+.form-error {
+  overflow: hidden;
+  margin-top: 10px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--danger);
+}
+
+.row-remove {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  color: var(--text-soft);
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.row-remove:hover {
+  background: rgba(229, 72, 77, 0.08);
+  color: var(--danger);
+}
+
+@media (max-width: 900px) {
+  .stat-grid,
+  .stat-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .stat-grid,
+  .stat-grid--four {
+    grid-template-columns: 1fr;
+  }
+}

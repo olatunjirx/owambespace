@@ -1,0 +1,293 @@
+/* ── Event target ────────────────────────────────────────── */
+
+.target {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(105, 53, 240, 0.18);
+  border-radius: var(--radius-12);
+  background: var(--primary-lighter);
+}
+
+.target__field {
+  flex: 1 1 auto;
+  max-width: 380px;
+}
+
+.target__field .filters__input {
+  background: var(--bg-default);
+}
+
+/* ── Filters ─────────────────────────────────────────────── */
+
+.filters__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filters__row--wrap {
+  margin-top: 16px;
+}
+
+.filters__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+
+.filters__field--grow {
+  flex: 1 1 220px;
+}
+
+.filters__field--check {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-end;
+  min-height: 40px;
+  font-size: var(--scale-14);
+  color: var(--text-strong);
+}
+
+.filters__field--check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-base);
+}
+
+.filters__more {
+  overflow: hidden;
+}
+
+.filters__amenities {
+  margin: 16px 0 0;
+  padding: 0;
+  border: none;
+}
+
+.filters__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.filter-chip {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-full);
+  background: var(--bg-default);
+  font-size: var(--scale-12);
+  font-weight: 500;
+  color: var(--text-sub);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.filter-chip:hover {
+  color: var(--text-strong);
+}
+
+.filter-chip--on {
+  background: var(--primary-lighter);
+  border-color: rgba(105, 53, 240, 0.24);
+  color: var(--primary-base);
+}
+
+.filters__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--stroke-soft);
+}
+
+.filters__summary {
+  flex: 1 1 auto;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.filters__sort .filters__input {
+  width: auto;
+  min-width: 180px;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.venue {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-24);
+  background: var(--bg-default);
+  overflow: hidden;
+  transition: border-color 0.18s ease;
+}
+
+.venue:hover {
+  border-color: rgba(105, 53, 240, 0.24);
+}
+
+.venue__link {
+  display: flex;
+  gap: 16px;
+  flex: 1 1 auto;
+  padding: 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Listings have no photography yet, so the tile carries the venue's initials
+   rather than a grey box pretending to be an image. */
+.venue__thumb {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-12);
+  font-family: var(--font-display);
+  font-size: var(--scale-24);
+  font-weight: 700;
+  color: var(--text-inverse);
+}
+
+.venue__body {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.venue__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.venue__name {
+  font-size: var(--scale-16);
+  font-weight: 600;
+  line-height: var(--scale-24);
+  letter-spacing: -0.24px;
+  color: var(--text-strong);
+}
+
+.venue__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex: none;
+  font-size: var(--scale-12);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--strength-fair);
+}
+
+.venue__reviews {
+  font-weight: 400;
+  color: var(--text-soft);
+}
+
+.venue__meta {
+  margin-top: 2px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.venue__tagline {
+  margin-top: 8px;
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  color: var(--text-sub);
+}
+
+.venue__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.venue__warning {
+  margin-top: 10px;
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: #a96a00;
+}
+
+.venue__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.venue__save {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-full);
+  background: var(--bg-default);
+  font-size: var(--scale-12);
+  font-weight: 600;
+  color: var(--text-sub);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.venue__save:hover:not(:disabled) {
+  border-color: rgba(105, 53, 240, 0.24);
+  color: var(--primary-base);
+}
+
+.venue__save:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.venue__save--on {
+  background: var(--primary-lighter);
+  border-color: rgba(105, 53, 240, 0.24);
+  color: var(--primary-base);
+}
+
+@media (max-width: 560px) {
+  .venue__link {
+    flex-direction: column;
+  }
+
+  .target {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .target__field {
+    max-width: none;
+  }
+}

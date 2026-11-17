@@ -1,0 +1,48 @@
+.mic {
+  position: relative;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-full);
+  background: var(--bg-page);
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.mic:hover {
+  color: var(--text-strong);
+  border-color: var(--stroke-strong);
+}
+
+.mic:focus-visible {
+  outline: 2px solid var(--primary-base);
+  outline-offset: 2px;
+}
+
+.mic--live {
+  color: var(--bg-page);
+  background: var(--primary-base);
+  border-color: var(--primary-base);
+}
+
+.mic--live:hover {
+  color: var(--bg-page);
+  border-color: var(--primary-base);
+}
+
+/* Sits behind the icon so the ring reads as the mic being open. */
+.mic__pulse {
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-full);
+  background: var(--primary-base);
+  pointer-events: none;
+}
+
+.mic svg {
+  position: relative;
+}

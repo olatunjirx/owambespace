@@ -1,0 +1,49 @@
+.segmented {
+  gap: 12px;
+}
+
+.segmented__track {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.segmented__option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.segmented__option:focus-within {
+  outline: 2px solid var(--primary-base);
+  outline-offset: 2px;
+}
+
+.segmented__indicator {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--primary-base);
+}
+
+.segmented__label {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--text-sub);
+  white-space: nowrap;
+  transition: color 0.16s var(--ease-out-quint);
+}
+
+.segmented__option.is-selected .segmented__label {
+  color: var(--text-inverse);
+}

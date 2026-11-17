@@ -1,0 +1,189 @@
+/*
+ * The band sizes to its content rather than holding a fixed height — padded
+ * air above the fold is the thing it exists to avoid.
+ */
+.band {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+  border-radius: var(--radius-24);
+  background: linear-gradient(135deg, var(--primary-darker), #3d1b8f);
+  color: var(--text-inverse);
+}
+
+.band__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.band__eyebrow {
+  font-size: var(--scale-10);
+  font-weight: 600;
+  line-height: var(--scale-12);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.band__name {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--scale-32);
+  line-height: var(--scale-32);
+  overflow-wrap: anywhere;
+}
+
+.band__when {
+  margin-top: 4px;
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  opacity: 0.78;
+}
+
+/* The emotional anchor — why hosts open the page at all. */
+.band__countdown {
+  flex: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.16);
+  font-size: var(--scale-12);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.band__missing {
+  font-size: var(--scale-14);
+  line-height: var(--scale-20);
+  opacity: 0.85;
+}
+
+.band__chips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* Each chip carries state, not just a label: a host should know where they
+   stand without tapping anything. */
+.band__chip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: var(--radius-12);
+  background: rgba(255, 255, 255, 0.1);
+  min-width: 0;
+}
+
+.band__chip-label {
+  font-size: var(--scale-10);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.band__chip-value {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  overflow-wrap: anywhere;
+}
+
+.band__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.band__progress {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.band__progress-label {
+  font-size: var(--scale-12);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
+}
+
+.band__meter {
+  height: 6px;
+  margin-top: 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.band__meter-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--text-inverse);
+  transform-origin: left center;
+}
+
+.band__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* One solid CTA inside a coloured band — the band is the emphasis, so the
+   button is a flat light pill rather than a second gradient. */
+.band__cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+  font-size: var(--scale-14);
+  font-weight: 600;
+  color: var(--primary-darker);
+  text-decoration: none;
+  transition: transform 0.18s ease;
+}
+
+.band__cta:hover {
+  transform: translateY(-1px);
+}
+
+.band__open {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  color: var(--text-inverse);
+  text-decoration: none;
+  opacity: 0.82;
+}
+
+.band__open:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .band__chips {
+    grid-template-columns: 1fr;
+  }
+
+  .band__name {
+    font-size: var(--scale-24);
+  }
+
+  .band__actions {
+    width: 100%;
+  }
+
+  .band__cta {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}

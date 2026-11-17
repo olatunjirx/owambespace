@@ -1,0 +1,169 @@
+.checklist__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.checklist__progress {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.checklist__progress-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: var(--scale-12);
+  color: var(--text-sub);
+}
+
+.checklist__progress-head span:last-child {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-strong);
+}
+
+.checklist__progress .meter {
+  margin-top: 8px;
+}
+
+.checklist__filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.checklist__filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-full);
+  background: var(--bg-default);
+  font-size: var(--scale-12);
+  font-weight: 500;
+  color: var(--text-sub);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.checklist__filter:hover {
+  color: var(--text-strong);
+}
+
+.checklist__filter--on {
+  background: var(--primary-lighter);
+  border-color: rgba(105, 53, 240, 0.24);
+  color: var(--primary-base);
+}
+
+.checklist__filter span {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+
+.checklist__add {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.checklist__add-field {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Rows ────────────────────────────────────────────────── */
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-12);
+  background: var(--bg-default);
+  transition: border-color 0.18s ease;
+}
+
+.checklist__item:hover {
+  border-color: rgba(105, 53, 240, 0.2);
+}
+
+.checklist__item--done {
+  background: var(--bg-default);
+  opacity: 0.66;
+}
+
+.checklist__item--done .checklist__label {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-soft);
+}
+
+/* The whole row is the toggle: a 16px box is a poor target on a phone. */
+.checklist__check {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  text-align: left;
+}
+
+.checklist__box {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--bg-muted);
+  border-radius: 6px;
+}
+
+.checklist__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.checklist__label {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  color: var(--text-strong);
+}
+
+.checklist__note {
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+@media (max-width: 620px) {
+  .checklist__add {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .checklist__item {
+    flex-wrap: wrap;
+  }
+}

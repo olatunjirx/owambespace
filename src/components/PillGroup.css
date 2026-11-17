@@ -1,0 +1,72 @@
+.pill-group {
+  gap: 12px;
+}
+
+.pill-group__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill-group__featured {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--stroke-soft);
+}
+
+.pill-group__featured .pill {
+  align-self: flex-start;
+}
+
+.pill-group__hint {
+  font-size: var(--scale-12);
+  line-height: var(--scale-16);
+  color: var(--text-sub);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px tall so it is a real touch target, not just a chip. */
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  transition:
+    background-color 0.16s var(--ease-out-quint),
+    border-color 0.16s var(--ease-out-quint),
+    color 0.16s var(--ease-out-quint);
+}
+
+.pill:hover {
+  background: var(--bg-muted);
+}
+
+.pill__label {
+  font-size: var(--scale-14);
+  font-weight: 500;
+  line-height: var(--scale-20);
+  letter-spacing: -0.07px;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+.pill.is-selected {
+  background: var(--primary-base);
+  border-color: var(--primary-base);
+}
+
+.pill.is-selected .pill__label {
+  color: var(--text-inverse);
+}
+
+/* The input is visually hidden, so the ring has to live on the label. */
+.pill:focus-within {
+  outline: 2px solid var(--primary-base);
+  outline-offset: 2px;
+}
